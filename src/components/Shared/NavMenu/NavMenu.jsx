@@ -4,18 +4,18 @@ import { ProvideContext } from '../../../Authentication/Authentication';
 import Swal from 'sweetalert2';
 
 const NavMenu = () => {
-    const {user, userSignOut} = useContext(ProvideContext)
-    const handleSignOut = () =>{
+    const { user, userSignOut } = useContext(ProvideContext)
+    const handleSignOut = () => {
         userSignOut()
-        .then( () =>{
-            Swal.fire({
-                icon: 'success',
-                text: 'You have Successfully Logout',
-              })
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'You have Successfully Logout',
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     const [isOpen, setIsOpen] = React.useState(false);
@@ -74,22 +74,35 @@ const NavMenu = () => {
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-4 flex items-center">
-                                <Link to="/profile">
-                                    <img
-                                        className="h-8 w-8 rounded-full"
-                                        src="/path/to/profile-picture.png"
-                                        alt="User Profile Picture"
-                                    />
-                                </Link>
-                                <Link to="/login">
-                                    <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-sky-400 hover:bg-blue-600">
-                                        Login
-                                    </button>
-                                </Link>
-                                
-                                <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
-                                    LogOut
-                                </button>
+                                { user &&
+                                     
+                                     <img
+                                     title={user.displayName}
+                                         className="h-8 w-8 rounded-full"
+                                         src={user?.photoURL}
+                                         alt="Not Found"
+                                     />
+                                    
+                                 
+                                }
+                               
+                                {
+                                    user ?
+                                        <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                                            LogOut
+                                        </button>
+                                        :
+                                        <Link to="/login">
+                                            <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-sky-400 hover:bg-blue-600">
+                                                Login
+                                            </button>
+                                        </Link>
+                                }
+
+
+
+
+
                                 <Link to="/register">
                                     <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-700 hover:bg-blue-600">
                                         Register

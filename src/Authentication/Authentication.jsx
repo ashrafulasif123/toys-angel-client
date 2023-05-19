@@ -35,7 +35,7 @@ const Authentication = ({children}) => {
             return unsubscribed()
         }
     } , [])
-    // console.log(user)
+    console.log(user)
 
     const ProvideInfo = {
         user,
