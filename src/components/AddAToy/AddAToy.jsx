@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddAToy = () => {
     const handleAddToy = event =>{
@@ -24,7 +25,13 @@ const AddAToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'WOW',
+                    text: 'You have Successfully Inserted',
+                  })
+            }
         })
 
         
@@ -58,9 +65,9 @@ const AddAToy = () => {
                         <label htmlFor="subCategory" className="block text-gray-700 font-bold mb-2">Sub-category:</label>
                         <select name="subCategory" className="w-full border border-gray-300 px-3 py-2 rounded">
                             <option value="">Select sub-category</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="home">Home</option>
+                            <option value="beer-toy">Beer Toy</option>
+                            <option value="horse-toy">Horse Toy</option>
+                            <option value="dinosaur-toy">Dinosaur toy</option>
                         </select>
                     </div>
                     <div>

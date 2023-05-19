@@ -6,7 +6,10 @@ const Main = () => {
     return (
         <div>
             <NavMenu></NavMenu>
+            <div className='container mx-auto'>
             <Outlet></Outlet>
+            </div>
+            
         </div>
     );
 };

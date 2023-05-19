@@ -1,9 +1,15 @@
 import React from 'react';
+import CategoryToy from '../CategoryToy/CategoryToy';
+import Banner from '../Banner/Banner';
+import Gallery from '../Gallery/Gallery';
 
 const Home = () => {
     return (
         <div>
-            This is the Home Page
+            <Banner></Banner>
+            <Gallery></Gallery>
+            <CategoryToy></CategoryToy>
+
         </div>
     );
 };

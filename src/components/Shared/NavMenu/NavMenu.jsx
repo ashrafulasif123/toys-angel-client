@@ -65,11 +65,18 @@ const NavMenu = () => {
                                         alt="User Profile Picture"
                                     />
                                 </Link>
-                                <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-700 hover:bg-blue-600">
-                                    Login
-                                </button>
-                                <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-red-700 hover:bg-red-600">
-                                    Logout
+                                <Link to="/login">
+                                    <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-sky-400 hover:bg-blue-600">
+                                        Login
+                                    </button>
+                                </Link>
+                                <Link to="/register">
+                                    <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-700 hover:bg-blue-600">
+                                        Register
+                                    </button>
+                                </Link>
+                                <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                                    LogOut
                                 </button>
                             </div>
                         </div>
@@ -159,17 +166,21 @@ const NavMenu = () => {
                             </div>
                             <div className="ml-3">
                                 <div className="text-base font-medium text-white">User Name</div>
-                                <div className="text-sm font-medium text-blue-300">
-                                    user@example.com
-                                </div>
                             </div>
                         </div>
                         <div className="mt-3 px-2 space-y-1">
-                            <button className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-700 hover:bg-blue-600">
-                                Login
-                            </button>
-                            <button className="mt-1 block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-red-700 hover:bg-red-600">
-                                Logout
+                            <Link to="/login">
+                                <button className=" ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-sky-400 hover:bg-blue-600">
+                                    Login
+                                </button>
+                            </Link>
+                            <Link to="/register">
+                                <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-700 hover:bg-blue-600">
+                                    Register
+                                </button>
+                            </Link>
+                            <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                                LogOut
                             </button>
                         </div>
                     </div>
