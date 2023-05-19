@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ProvideContext } from '../../../Authentication/Authentication';
+import Swal from 'sweetalert2';
 
 const NavMenu = () => {
+    const {userSignOut} = useContext(ProvideContext)
+    const handleSignOut = () =>{
+        userSignOut()
+        .then( () =>{
+            Swal.fire({
+                icon: 'success',
+                text: 'You have Successfully Logout',
+              })
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
     const [isOpen, setIsOpen] = React.useState(false);
 
     const toggleNavbar = () => {
@@ -75,7 +91,7 @@ const NavMenu = () => {
                                         Register
                                     </button>
                                 </Link>
-                                <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                                <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
                                     LogOut
                                 </button>
                             </div>
@@ -179,7 +195,7 @@ const NavMenu = () => {
                                     Register
                                 </button>
                             </Link>
-                            <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                            <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
                                 LogOut
                             </button>
                         </div>
