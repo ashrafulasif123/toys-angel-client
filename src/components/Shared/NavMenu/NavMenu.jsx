@@ -4,7 +4,7 @@ import { ProvideContext } from '../../../Authentication/Authentication';
 import Swal from 'sweetalert2';
 
 const NavMenu = () => {
-    const {userSignOut} = useContext(ProvideContext)
+    const {user, userSignOut} = useContext(ProvideContext)
     const handleSignOut = () =>{
         userSignOut()
         .then( () =>{
@@ -86,14 +86,15 @@ const NavMenu = () => {
                                         Login
                                     </button>
                                 </Link>
+                                
+                                <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                                    LogOut
+                                </button>
                                 <Link to="/register">
                                     <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-700 hover:bg-blue-600">
                                         Register
                                     </button>
                                 </Link>
-                                <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
-                                    LogOut
-                                </button>
                             </div>
                         </div>
                         <div className="-mr-2 flex md:hidden">
