@@ -3,13 +3,13 @@ import React from 'react';
 const AllToy = ({ allToy }) => {
     const { name, picture, price, quantity, rating, sellerEmail, sellerName, subCategory, _id} = allToy
     return (
-        <tr>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Littel, Schaden and Vandervort</td>
-            <td>Canada</td>
-            <td>12/16/2020</td>
-            <td><button className="btn btn-active btn-ghost btn-xs">View Details</button></td>
+        <tr className='bg-sky-400'>
+            <td className='text-lg bg-sky-200 border border-gray-400 text-center'>{sellerName}</td>
+            <td className='text-lg bg-sky-200 border border-gray-400 text-center'>{name}</td>
+            <td className='text-lg bg-sky-200 border border-gray-400 text-center'>{subCategory}</td>
+            <td className='text-lg bg-sky-200 border border-gray-400 text-center'>${price}</td>
+            <td className='text-lg bg-sky-200 border border-gray-400 text-center'>{quantity}</td>
+            <td className='text-lg bg-sky-200 border border-gray-400 text-center'><button className="btn btn-active btn-ghost btn-xs">View Details</button></td>
         </tr>
     );
 };

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { ProvideContext } from '../../Authentication/Authentication';
 
 const AddAToy = () => {
+    const {user} = useContext(ProvideContext)
     const handleAddToy = event =>{
         event.preventDefault()
         const form = event.target;
@@ -55,11 +57,11 @@ const AddAToy = () => {
                     </div>
                     <div>
                         <label htmlFor="sellerName" className="block text-gray-700 font-bold mb-2">Seller Name:</label>
-                        <input type="text" name="sellerName" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="text" name="sellerName" defaultValue={user.displayName} readOnly className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div>
                         <label htmlFor="sellerEmail" className="block text-gray-700 font-bold mb-2">Seller Email:</label>
-                        <input type="email" name="sellerEmail" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="email" name="sellerEmail" defaultValue={user.email} readOnly className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div>
                         <label htmlFor="subCategory" className="block text-gray-700 font-bold mb-2">Sub-category:</label>

@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToy from '../AllToy/AllToy';
+import './AllToys.css'
 
 const AllToys = () => {
-    const allToys = useLoaderData()
+    const toysInformation = useLoaderData()
+    const [allToys, setAllToys] = useState(toysInformation)
     console.log(allToys)
     return (
         <div>
-            <h2 className='text-5xl text-center my-10'>All Toys Information</h2>
+            <h2 className='text-4xl text-center my-10'>All Toys Information</h2>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     {/* head */}
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>company</th>
-                            <th>location</th>
-                            <th>Last Login</th>
-                            <th></th>
+                        <tr className='bg-sky-300'>
+                            <th className='text-xl bg-sky-300 text-center'>Seller</th>
+                            <th className='text-xl bg-sky-300 text-center'>Toy Name</th>
+                            <th className='text-xl bg-sky-300 text-center'>Sub Category</th>
+                            <th className='text-xl bg-sky-300 text-center'>Price</th>
+                            <th className='text-xl bg-sky-300 text-center'>Available Quantity</th>
+                            <th className='text-xl bg-sky-300 text-center'></th>
                         </tr>
                     </thead>
                     <tbody>
