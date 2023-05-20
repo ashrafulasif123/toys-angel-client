@@ -161,7 +161,7 @@ const NavMenu = () => {
                             Home
                         </Link>
                         <Link
-                            to="/toys"
+                            to="/all-toys"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             All Toys

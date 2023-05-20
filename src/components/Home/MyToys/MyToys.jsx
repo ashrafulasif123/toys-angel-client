@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import AllToy from '../AllToy/AllToy';
-import './AllToys.css'
+import React, { useContext, useEffect, useState } from 'react';
+import { ProvideContext } from '../../../Authentication/Authentication';
+import MyToy from '../MyToy/MyToy';
 
-const AllToys = () => {
-    const toysInformation = useLoaderData()
-    const [allToys, setAllToys] = useState(toysInformation)
-    console.log(allToys)
+const MyToys = () => {
+    const { user } = useContext(ProvideContext)
+    const [myToys, setMyToys] = useState([])
+    const [remaining, setRemaining] = useState(true)
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data))
+    }, [remaining])
     return (
         <div>
-            <h2 className='text-4xl text-center my-10'>All Toys Information</h2>
+            <h2 className='text-4xl text-center my-10'>My Toys Information</h2>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     {/* head */}
@@ -20,17 +26,19 @@ const AllToys = () => {
                             <th className='text-xl bg-sky-300 text-center'>Sub Category</th>
                             <th className='text-xl bg-sky-300 text-center'>Price</th>
                             <th className='text-xl bg-sky-300 text-center'>Available Quantity</th>
-                            <th className='text-xl bg-sky-300 text-center'>Details Description</th>
+                            <th className='text-xl bg-sky-300 text-center'>Detail description</th>
                             <th className='text-xl bg-sky-300 text-center'></th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            allToys.map((allToy, index) => <AllToy
+                            myToys.map((myToy, index) => <MyToy
                                 key={index}
-                                allToy={allToy}
-                                
-                            ></AllToy>)
+                                myToy={myToy}
+                                remaining={remaining}
+                                setRemaining={setRemaining}
+
+                            ></MyToy>)
                         }
                     </tbody>
                 </table>
@@ -39,4 +47,4 @@ const AllToys = () => {
     );
 };
 
-export default AllToys;
+export default MyToys;
