@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const SingleToy = () => {
     const singleToy = useLoaderData()
     const { description, name, picture, price, quantity, rating, sellerEmail, sellerName, subCategory, _id } = singleToy
     console.log(singleToy)
+    useTitle('Single Toy')
     return (
         <div className='bg-base-200'>
         <h2 className='text-5xl font-bold text-center py-6'>Toy Information</h2>

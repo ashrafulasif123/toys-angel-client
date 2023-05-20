@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToy from '../AllToy/AllToy';
 import './AllToys.css'
+import useTitle from '../../../hooks/useTitle';
 
 const AllToys = () => {
     const toysInformation = useLoaderData()
     const [allToys, setAllToys] = useState(toysInformation)
-    console.log(allToys)
+    useTitle('All Toys')
     return (
         <div>
             <h2 className='text-4xl text-center my-10'>All Toys Information</h2>

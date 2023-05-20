@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { ProvideContext } from '../../../Authentication/Authentication';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     const {registerUser, userUpdate} = useContext(ProvideContext)
+    useTitle('Register')
     const handleRegister = event => {
         event.preventDefault()
         const form = event.target;

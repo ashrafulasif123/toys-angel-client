@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ProvideContext } from '../../../Authentication/Authentication';
 import MyToy from '../MyToy/MyToy';
+import useTitle from '../../../hooks/useTitle';
 
 const MyToys = () => {
     const { user } = useContext(ProvideContext)
     const [myToys, setMyToys] = useState([])
     const [remaining, setRemaining] = useState(true)
+    useTitle('My Toys')
 
 
     useEffect(() => {

@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { ProvideContext } from '../../Authentication/Authentication';
+import useTitle from '../../hooks/useTitle';
 
 const AddAToy = () => {
+    useTitle('Add a Toy')
     const {user} = useContext(ProvideContext)
     const handleAddToy = event =>{
         event.preventDefault()

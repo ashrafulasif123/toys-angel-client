@@ -3,6 +3,7 @@ import { ProvideContext } from '../../../Authentication/Authentication';
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 
 const Login = () => {
@@ -10,6 +11,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     console.log(location)
+    useTitle('Login')
     const from = location?.state?.from?.pathname || '/';
     
 
