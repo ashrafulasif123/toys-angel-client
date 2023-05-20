@@ -49,11 +49,11 @@ const AddAToy = () => {
                 <div className="grid grid-cols-2 gap-6 mb-6">
                     <div>
                         <label htmlFor="picture" className="block text-gray-700 font-bold mb-2">Picture URL</label>
-                        <input type="text" name="picture" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="text" name="picture" required className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div>
                         <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:</label>
-                        <input type="text" name="name" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="text" name="name" required className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div>
                         <label htmlFor="sellerName" className="block text-gray-700 font-bold mb-2">Seller Name:</label>
@@ -65,7 +65,7 @@ const AddAToy = () => {
                     </div>
                     <div>
                         <label htmlFor="subCategory" className="block text-gray-700 font-bold mb-2">Sub-category:</label>
-                        <select name="subCategory" className="w-full border border-gray-300 px-3 py-2 rounded">
+                        <select name="subCategory" required className="w-full border border-gray-300 px-3 py-2 rounded">
                             <option value="">Select sub-category</option>
                             <option value="beer-toy">Beer Toy</option>
                             <option value="horse-toy">Horse Toy</option>
@@ -74,19 +74,19 @@ const AddAToy = () => {
                     </div>
                     <div>
                         <label htmlFor="price" className="block text-gray-700 font-bold mb-2">Price:</label>
-                        <input type="number" name="price" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="number" name="price" required className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div>
                         <label htmlFor="rating" className="block text-gray-700 font-bold mb-2">Rating:</label>
-                        <input type="number" name="rating" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="number" name="rating" required className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div>
                         <label htmlFor="quantity" className="block text-gray-700 font-bold mb-2">Available Quantity:</label>
-                        <input type="number" name="quantity" className="w-full border border-gray-300 px-3 py-2 rounded" />
+                        <input type="number" name="quantity" required className="w-full border border-gray-300 px-3 py-2 rounded" />
                     </div>
                     <div className="col-span-2">
                         <label htmlFor="description" className="block text-gray-700 font-bold mb-2">Details Description:</label>
-                        <textarea name="description" rows="4" className="w-full border border-gray-300 px-3 py-2 rounded"></textarea>
+                        <textarea name="description" required rows="4" className="w-full border border-gray-300 px-3 py-2 rounded"></textarea>
                     </div>
                 </div>
                 <div className="flex justify-end">

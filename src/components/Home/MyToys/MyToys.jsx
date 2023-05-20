@@ -19,17 +19,20 @@ const MyToys = () => {
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     {/* head */}
-                    <thead>
-                        <tr className='bg-sky-300'>
-                            <th className='text-xl bg-sky-300 text-center'>Seller</th>
-                            <th className='text-xl bg-sky-300 text-center'>Toy Name</th>
-                            <th className='text-xl bg-sky-300 text-center'>Sub Category</th>
-                            <th className='text-xl bg-sky-300 text-center'>Price</th>
-                            <th className='text-xl bg-sky-300 text-center'>Available Quantity</th>
-                            <th className='text-xl bg-sky-300 text-center'>Detail description</th>
-                            <th className='text-xl bg-sky-300 text-center'></th>
-                        </tr>
-                    </thead>
+                    { (myToys.length !== 0)?
+                        <thead>
+                            <tr className='bg-sky-300'>
+                                <th className='text-xl bg-sky-300 text-center'>Seller</th>
+                                <th className='text-xl bg-sky-300 text-center'>Toy Name</th>
+                                <th className='text-xl bg-sky-300 text-center'>Sub Category</th>
+                                <th className='text-xl bg-sky-300 text-center'>Price</th>
+                                <th className='text-xl bg-sky-300 text-center'>Available Quantity</th>
+                                <th className='text-xl bg-sky-300 text-center'>Detail description</th>
+                                <th className='text-xl bg-sky-300 text-center'>Action</th>
+                            </tr>
+                        </thead>
+                        : <p className='text-[red] text-center'>No Toy Found</p>
+                    }
                     <tbody>
                         {
                             myToys.map((myToy, index) => <MyToy
