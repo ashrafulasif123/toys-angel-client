@@ -19,7 +19,7 @@ const MyToys = () => {
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     {/* head */}
-                    { (myToys.length !== 0)?
+                    
                         <thead>
                             <tr className='bg-sky-300'>
                                 <th className='text-xl bg-sky-300 text-center'>Seller</th>
@@ -31,8 +31,8 @@ const MyToys = () => {
                                 <th className='text-xl bg-sky-300 text-center'>Action</th>
                             </tr>
                         </thead>
-                        : <p className='text-[red] text-center'>No Toy Found</p>
-                    }
+                        
+                   
                     <tbody>
                         {
                             myToys.map((myToy, index) => <MyToy
