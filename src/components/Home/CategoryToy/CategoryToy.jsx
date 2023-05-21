@@ -30,17 +30,17 @@ const CategoryToy = () => {
     }
 
     useEffect(() => {
-        fetch('https://toys-angel-server.vercel.app/toys?subCategory=beer-toy')
+        fetch('http://localhost:5000/toys?subCategory=beer-toy')
             .then(res => res.json())
             .then(data => setBears(data))
     }, [])
     useEffect(() => {
-        fetch('https://toys-angel-server.vercel.app/toys?subCategory=horse-toy')
+        fetch('http://localhost:5000/toys?subCategory=horse-toy')
             .then(res => res.json())
             .then(data => setHorse(data))
     }, [])
     useEffect(() => {
-        fetch('https://toys-angel-server.vercel.app/toys?subCategory=dinosaur-toy')
+        fetch('http://localhost:5000/toys?subCategory=dinosaur-toy')
             .then(res => res.json())
             .then(data => setDinosour(data))
     }, [])
@@ -64,7 +64,7 @@ const CategoryToy = () => {
                 <TabPanel>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {bears.map((bear) => (
-                            <div className="card w-96  shadow-xl  border-blue-200 border-4">
+                            <div data-aos="flip-left" className="card w-96  shadow-xl  border-blue-200 border-4">
                                 <figure className="p-3">
                                     <img src={bear.picture} alt="Shoes" className="rounded-xl h-60 w-full" />
                                 </figure>
