@@ -32,7 +32,7 @@ const NavMenu = () => {
                             <Link to="/">
                                 <img
                                     className="h-8 w-8 ms-6 rounded"
-                                    src="https://png.pngtree.com/png-clipart/20220601/original/pngtree-kids-title-event-vector-icon-design-illustration-template-png-image_7843573.png"
+                                    src="/toys.png"
                                     alt="Website Logo"
                                 />
                                 <span className="ml-2 text-white font-bold">Anjel Toys</span>

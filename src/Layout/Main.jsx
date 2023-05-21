@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, useNavigation } from 'react-router-dom';
 import NavMenu from '../components/Shared/NavMenu/NavMenu';
+import Footer from '../components/Shared/Footer/Footer';
 
 const Main = () => {
     const navigation = useNavigation();
@@ -12,6 +13,7 @@ const Main = () => {
                     <span className="visually-hidden"><div className="radial-progress" style={{"--value":70}}></div></span>
                 </div>}</div>
                 <Outlet></Outlet>
+                <Footer></Footer>
             </div>
 
         </div>
