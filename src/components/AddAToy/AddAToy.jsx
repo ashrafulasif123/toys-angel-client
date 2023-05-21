@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { ProvideContext } from '../../Authentication/Authentication';
 import useTitle from '../../hooks/useTitle';
+import { useNavigate } from 'react-router-dom';
 
 const AddAToy = () => {
     useTitle('Add a Toy')
     const {user} = useContext(ProvideContext)
+    const navigate = useNavigate()
     const handleAddToy = event =>{
         event.preventDefault()
         const form = event.target;
@@ -19,6 +21,7 @@ const AddAToy = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const toy = {picture, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description}
+        form.reset()
         // console.log(toy)
         fetch('http://localhost:5000/toys', {
             method: 'POST',
@@ -35,6 +38,7 @@ const AddAToy = () => {
                     title: 'WOW',
                     text: 'You have Successfully Inserted',
                   })
+                  navigate('/all-toys')
             }
         })
 

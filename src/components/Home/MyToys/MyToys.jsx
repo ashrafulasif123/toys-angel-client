@@ -7,6 +7,7 @@ const MyToys = () => {
     const { user } = useContext(ProvideContext)
     const [myToys, setMyToys] = useState([])
     const [remaining, setRemaining] = useState(true)
+    console.log(user)
     useTitle('My Toys')
 
 

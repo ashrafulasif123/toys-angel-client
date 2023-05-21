@@ -12,7 +12,7 @@ const AllToy = ({ allToy }) => {
             <td className='text-lg bg-sky-100 border border-gray-400 text-center'>{quantity}</td>
             <td className='text-lg bg-sky-100 border border-gray-400 text-center'>{description}</td>
             <td className='text-lg bg-sky-100 border border-gray-400 text-center'>
-                <Link to={`/singletoy/${_id}`}><button className="btn btn-ghost">View Details</button></Link>
+                <Link to={`/singletoy/${_id}`}><button className="btn btn-info btn-sm">View Details</button></Link>
             </td>
         </tr>
     );

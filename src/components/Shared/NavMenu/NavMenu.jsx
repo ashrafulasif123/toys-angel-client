@@ -52,18 +52,18 @@ const NavMenu = () => {
                                 >
                                     All Toys
                                 </Link>
-                                <Link
+                                {user && <Link
                                     to="/my-toys"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     My Toys
-                                </Link>
-                                <Link
+                                </Link>}
+                                {user && <Link
                                     to="/add-toy"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     Add a Toy
-                                </Link>
+                                </Link>}
                                 <Link
                                     to="/blogs"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
@@ -74,18 +74,18 @@ const NavMenu = () => {
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-4 flex items-center">
-                                { user &&
-                                     
-                                     <img
-                                     title={user.displayName}
-                                         className="h-8 w-8 rounded-full"
-                                         src={user?.photoURL}
-                                         alt="Not Found"
-                                     />
-                                    
-                                 
+                                {user &&
+
+                                    <img
+                                        title={user.displayName}
+                                        className="h-8 w-8 rounded-full"
+                                        src={user?.photoURL}
+                                        alt="Not Found"
+                                    />
+
+
                                 }
-                               
+
                                 {
                                     user ?
                                         <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
@@ -166,18 +166,18 @@ const NavMenu = () => {
                         >
                             All Toys
                         </Link>
-                        <Link
+                        { user && <Link
                             to="/my-toys"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             My Toys
-                        </Link>
-                        <Link
+                        </Link>}
+                        { user && <Link
                             to="/add-toy"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             Add a Toy
-                        </Link>
+                        </Link>}
                         <Link
                             to="/blogs"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
@@ -188,30 +188,39 @@ const NavMenu = () => {
                     <div className="pt-4 pb-3 border-t border-blue-700">
                         <div className="flex items-center px-5">
                             <div className="flex-shrink-0">
-                                <img
-                                    className="h-10 w-10 rounded-full"
-                                    src="/path/to/profile-picture.png"
-                                    alt="User Profile Picture"
-                                />
+                                {user &&
+                                    <img
+                                        title={user.displayName}
+                                        className="h-8 w-8 rounded-full"
+                                        src={user?.photoURL}
+                                        alt="Not Found"
+                                    />
+                                }
                             </div>
-                            <div className="ml-3">
+                            {/* <div className="ml-3">
                                 <div className="text-base font-medium text-white">User Name</div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="mt-3 px-2 space-y-1">
-                            <Link to="/login">
-                                <button className=" ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-sky-400 hover:bg-blue-600">
-                                    Login
+                            {user ?
+
+
+                                <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
+                                    LogOut
                                 </button>
-                            </Link>
+                                :
+                                <Link to="/login">
+                                    <button className=" ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-sky-400 hover:bg-blue-600">
+                                        Login
+                                    </button>
+                                </Link>
+                            }
                             <Link to="/register">
                                 <button className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-700 hover:bg-blue-600">
                                     Register
                                 </button>
                             </Link>
-                            <button onClick={handleSignOut} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-white bg-yellow-400 hover:bg-blue-600">
-                                LogOut
-                            </button>
+
                         </div>
                     </div>
                 </div>
