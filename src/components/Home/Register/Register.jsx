@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { ProvideContext } from '../../../Authentication/Authentication';
@@ -6,6 +6,7 @@ import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     const {registerUser, userUpdate} = useContext(ProvideContext)
+    const [errormessage, setError] = useState(null)
     useTitle('Register')
     const handleRegister = event => {
         event.preventDefault()
@@ -29,11 +30,12 @@ const Register = () => {
               })
         })
         .catch(error =>{
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'email-already-in-use',
-              })
+            setError(error.message)
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Oops...',
+            //     text: 'email-already-in-use',
+            //   })
         })
 
         const toy = { picture, name, password, email }
@@ -41,6 +43,7 @@ const Register = () => {
     }
     return (
         <>
+        <h1 data-aos="zoom-in-up" className='text-center my-5 text-2xl text-red-600'>{errormessage}</h1>
             <div className="max-w-2xl mx-auto bg-info rounded-lg overflow-hidden shadow-md border border-sky-700 mt-6">
                 <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-4">
                     <h2 className="text-2xl font-bold text-white">Register</h2>

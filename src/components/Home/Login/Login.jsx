@@ -46,6 +46,7 @@ const Login = () => {
                 title: 'WOW',
                 text: 'You have Successfully Login',
               })
+              navigate(from, {replace: true})
         })
         .catch(error =>{
             console.log(error)

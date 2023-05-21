@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import './NavMenu.css'
+
 import { ProvideContext } from '../../../Authentication/Authentication';
 import Swal from 'sweetalert2';
+import ActiveLink from '../../../ActiveLink/ActiveLink';
+import { Link } from 'react-router-dom';
 
 const NavMenu = () => {
     const { user, userSignOut } = useContext(ProvideContext)
@@ -24,52 +27,52 @@ const NavMenu = () => {
         setIsOpen(!isOpen);
     };
     return (
-        <div>
+        <div className=''>
             <nav className="bg-blue-500">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex-shrink-0">
-                            <Link to="/">
+                            
                                 <img
                                     className="h-8 w-8 ms-6 rounded"
                                     src="/toys.png"
                                     alt="Website Logo"
                                 />
                                 <span className="ml-2 text-white font-bold">Anjel Toys</span>
-                            </Link>
+                            
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-4 flex items-center">
-                                <Link
+                                <ActiveLink
                                     to="/"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     Home
-                                </Link>
-                                <Link
+                                </ActiveLink>
+                                <ActiveLink
                                     to="/all-toys"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     All Toys
-                                </Link>
-                                {user && <Link
+                                </ActiveLink>
+                                {user && <ActiveLink
                                     to="/my-toys"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     My Toys
-                                </Link>}
-                                {user && <Link
+                                </ActiveLink>}
+                                {user && <ActiveLink
                                     to="/add-toy"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     Add a Toy
-                                </Link>}
-                                <Link
+                                </ActiveLink>}
+                                <ActiveLink
                                     to="/blogs"
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-600"
                                 >
                                     Blogs
-                                </Link>
+                                </ActiveLink>
                             </div>
                         </div>
                         <div className="hidden md:block">
@@ -154,36 +157,36 @@ const NavMenu = () => {
 
                 <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link
+                        <ActiveLink
                             to="/"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             Home
-                        </Link>
-                        <Link
+                        </ActiveLink>
+                        <ActiveLink
                             to="/all-toys"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             All Toys
-                        </Link>
-                        { user && <Link
+                        </ActiveLink>
+                        { user && <ActiveLink
                             to="/my-toys"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             My Toys
-                        </Link>}
-                        { user && <Link
+                        </ActiveLink>}
+                        { user && <ActiveLink
                             to="/add-toy"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             Add a Toy
-                        </Link>}
-                        <Link
+                        </ActiveLink>}
+                        <ActiveLink
                             to="/blogs"
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-600"
                         >
                             Blogs
-                        </Link>
+                        </ActiveLink>
                     </div>
                     <div className="pt-4 pb-3 border-t border-blue-700">
                         <div className="flex items-center px-5">
