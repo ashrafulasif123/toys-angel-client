@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-sky-700 text-neutral-content justify-around">
+        <footer className="footer p-10 bg-sky-700 text-neutral-content justify-around mt-5">
             <div>
                 <img
                     className="h-12 w-12 ms-6 rounded"

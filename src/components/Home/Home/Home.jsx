@@ -3,6 +3,8 @@ import CategoryToy from '../CategoryToy/CategoryToy';
 import Banner from '../Banner/Banner';
 import Gallery from '../Gallery/Gallery';
 import useTitle from '../../../hooks/useTitle';
+import Info from '../../Information/Info';
+import DinosourToy from '../DinosourToy/DinosourToy';
 
 const Home = () => {
     useTitle('Home')
@@ -11,6 +13,8 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <CategoryToy></CategoryToy>
+            <Info></Info>
+            <DinosourToy></DinosourToy>
 
         </div>
     );
