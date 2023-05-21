@@ -17,7 +17,7 @@ const MyToy = ({ myToy, remaining, setRemaining }) => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/toys/${_id}` , {
+                fetch(`https://toys-angel-server.vercel.app/toys/${_id}` , {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

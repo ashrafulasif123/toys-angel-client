@@ -30,17 +30,17 @@ const CategoryToy = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys?subCategory=beer-toy')
+        fetch('https://toys-angel-server.vercel.app/toys?subCategory=beer-toy')
             .then(res => res.json())
             .then(data => setBears(data))
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/toys?subCategory=horse-toy')
+        fetch('https://toys-angel-server.vercel.app/toys?subCategory=horse-toy')
             .then(res => res.json())
             .then(data => setHorse(data))
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/toys?subCategory=dinosaur-toy')
+        fetch('https://toys-angel-server.vercel.app/toys?subCategory=dinosaur-toy')
             .then(res => res.json())
             .then(data => setDinosour(data))
     }, [])

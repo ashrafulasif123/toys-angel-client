@@ -13,7 +13,7 @@ const AllToys = () => {
     const form = event.target;
     const toyname = form.toyname.value;
 
-    fetch(`http://localhost:5000/toyname?name=${toyname}`)
+    fetch(`https://toys-angel-server.vercel.app/toyname?name=${toyname}`)
       .then(res => res.json())
       .then(data => {
         if (data.length > 0) {
