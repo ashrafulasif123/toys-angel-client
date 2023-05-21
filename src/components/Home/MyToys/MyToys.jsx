@@ -12,7 +12,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys?sellerEmail=${user?.email}`)
+        fetch(`https://toys-angel-server.vercel.app/mytoys?sellerEmail=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [remaining])

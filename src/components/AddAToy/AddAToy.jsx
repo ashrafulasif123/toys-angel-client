@@ -23,7 +23,7 @@ const AddAToy = () => {
         const toy = {picture, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description}
         form.reset()
         // console.log(toy)
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toys-angel-server.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
